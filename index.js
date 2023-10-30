@@ -40,11 +40,20 @@ run().catch(console.dir);
 
 async function run(){
   try{
-    const appointmentOptionCollection = client.db('medwinCares').collection('appointmentOptions')
+    const appointmentOptionCollection = client.db('medwinCares').collection('appointmentOptions');
+    const bookingsCollection = client.db('medwinCares').collection('bookings');
+
     app.get('/appointmentOptions', async(req, res) =>{
       const query = {};
       const options = await appointmentOptionCollection.find(query).toArray();
       res.send(options)
+    })
+
+    app.post('/bookings', async(req, res) =>{
+      const booking = req.body
+      console.log(booking);
+      const result = await bookingsCollection.insertOne(booking);
+      res.send(result);
     })
   }
   finally{
