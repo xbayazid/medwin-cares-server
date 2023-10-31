@@ -1,7 +1,7 @@
 [
     {
-        "name": "John Smith",
-        "specalist": "Cardiologist",
+        "name": "Cardiologist",
+        "specalist": "John Smith",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -22,8 +22,52 @@
           ]
     },
     {
-        "name": "David Williams",
-        "specalist": "Neurologist",
+        "name": "Neurologist",
+        "specalist": "David Williams",
+        "slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 9.30 AM",
+            "09.30 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM",
+            "11.00 AM - 11.30 AM",
+            "11.30 AM - 12.00 AM",
+            "1.00 PM - 1.30 PM",
+            "1.30 PM - 2.00 PM",
+            "2.00 PM - 2.30 PM",
+            "2.30 PM - 3.00 PM",
+            "3.00 PM - 3.30 PM",
+            "3.30 PM - 4.00 PM",
+            "4.00 PM - 4.30 PM",
+            "4.30 PM - 5.00 PM"
+          ]
+    },
+    {   
+        "name": "Gynecologists",
+        "specalist": "Lisa Martinez",
+        "slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 9.30 AM",
+            "09.30 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM",
+            "11.00 AM - 11.30 AM",
+            "11.30 AM - 12.00 AM",
+            "1.00 PM - 1.30 PM",
+            "1.30 PM - 2.00 PM",
+            "2.00 PM - 2.30 PM",
+            "2.30 PM - 3.00 PM",
+            "3.00 PM - 3.30 PM",
+            "3.30 PM - 4.00 PM",
+            "4.00 PM - 4.30 PM",
+            "4.30 PM - 5.00 PM"
+          ]
+    },
+    {   
+        "name": "Dentist",
+        "specalist": "Michael Johnson",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -44,8 +88,14 @@
           ]
     },
     {
-        "name": "Lisa Martinez",
-        "specalist": "Gynecologists",
+        "name": "Orthopedic Surgeon",
+        "specalist": "Jessica Taylor",
+        "slots": [
+          ]
+    },
+    {
+        "name": "Psychiatrist",
+        "specalist": "Daniel Clark",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -66,8 +116,8 @@
           ]
     },
     {
-        "name": "Michael Johnson",
-        "specalist": "Dentist",
+        "name": "Orthopedic Surgeon",
+        "specalist": "Christopher White",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -88,14 +138,8 @@
           ]
     },
     {
-        "name": "Jessica Taylor",
-        "specalist": "Orthopedic Surgeon",
-        "slots": [
-          ]
-    },
-    {
-        "name": "Daniel Clark",
-        "specalist": "Psychiatrist",
+        "name": "Gastroenterologist",
+        "specalist": "Sarah Baker",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -116,52 +160,8 @@
           ]
     },
     {
-        "name": "Christopher White",
-        "specalist": "Orthopedic Surgeon",
-        "slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM",
-            "11.00 AM - 11.30 AM",
-            "11.30 AM - 12.00 AM",
-            "1.00 PM - 1.30 PM",
-            "1.30 PM - 2.00 PM",
-            "2.00 PM - 2.30 PM",
-            "2.30 PM - 3.00 PM",
-            "3.00 PM - 3.30 PM",
-            "3.30 PM - 4.00 PM",
-            "4.00 PM - 4.30 PM",
-            "4.30 PM - 5.00 PM"
-          ]
-    },
-    {
-        "name": "Sarah Baker",
-        "specalist": "Gastroenterologist",
-        "slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM",
-            "11.00 AM - 11.30 AM",
-            "11.30 AM - 12.00 AM",
-            "1.00 PM - 1.30 PM",
-            "1.30 PM - 2.00 PM",
-            "2.00 PM - 2.30 PM",
-            "2.30 PM - 3.00 PM",
-            "3.00 PM - 3.30 PM",
-            "3.30 PM - 4.00 PM",
-            "4.00 PM - 4.30 PM",
-            "4.30 PM - 5.00 PM"
-          ]
-    },
-    {
-        "name": "Jennifer Anderson",
-        "specalist": "Dermatologist",
+        "name": "Dermatologist",
+        "specalist": "Jennifer Anderson",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
