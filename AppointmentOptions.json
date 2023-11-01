@@ -1,7 +1,6 @@
 [
     {
         "name": "Cardiologist",
-        "specalist": "John Smith",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -23,7 +22,6 @@
     },
     {
         "name": "Neurologist",
-        "specalist": "David Williams",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -45,7 +43,6 @@
     },
     {   
         "name": "Gynecologists",
-        "specalist": "Lisa Martinez",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -67,7 +64,6 @@
     },
     {   
         "name": "Dentist",
-        "specalist": "Michael Johnson",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -89,7 +85,6 @@
     },
     {
         "name": "Orthopedic Surgeon",
-        "specalist": "Jessica Taylor",
         "slots": [
           ]
     },
@@ -117,7 +112,6 @@
     },
     {
         "name": "Orthopedic Surgeon",
-        "specalist": "Christopher White",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -139,7 +133,6 @@
     },
     {
         "name": "Gastroenterologist",
-        "specalist": "Sarah Baker",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
@@ -161,7 +154,6 @@
     },
     {
         "name": "Dermatologist",
-        "specalist": "Jennifer Anderson",
         "slots": [
             "08.00 AM - 08.30 AM",
             "08.30 AM - 09.00 AM",
