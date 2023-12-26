@@ -3,6 +3,7 @@ const cors = require('cors');
 const port = process.env.PORT || 5000;
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const jwt = require('jsonwebtoken');
+const nodemailer = require("nodemailer");
 require('dotenv').config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
@@ -65,6 +66,8 @@ async function run(){
     const bookingsCollection = client.db('medwinCares').collection('bookings');
     const usersCollection = client.db('medwinCares').collection('users');
     const doctorsCollection = client.db('medwinCares').collection('doctors');
+    const departmentsCollection = client.db('medwinCares').collection('departments');
+    const shopsCollection = client.db('medwinCares').collection('shop');
     const paymentsCollection = client.db('medwinCares').collection('payments');
 
     const verifyAdmin = async (req, res, next) =>{
@@ -99,6 +102,18 @@ async function run(){
     const result = await appointmentOptionCollection.find(query).project({name: 1}).toArray();
     res.send(result);
   });
+  
+  app.get('/shop', async(req, res) =>{
+    const query = {}
+    const result = await shopsCollection.find(query).toArray();
+    res.send(result)
+  });
+
+  app.get('/departments', async(req, res) =>{
+    const query = {}
+    const result = await departmentsCollection.find(query).toArray();
+    res.send(result);
+  })
 
   app.get('/bookings', verifyJWT, async (req, res) => {
     const email = req.query.email;
@@ -199,6 +214,12 @@ async function run(){
       res.send(result);
     });
 
+    app.post('/shop', async(req, res)=>{
+      const shop = req.body;
+      const result = await shopsCollection.insertOne(shop);
+      res.send(result);
+    })
+
     app.put('/users/admin/:id', verifyJWT, verifyAdmin, async(req, res) =>{
       const id = req.params.id;
       const filter = { _id: new ObjectId(id) }
@@ -219,6 +240,13 @@ async function run(){
       res.send(result);
     });
 
+    app.delete('/shop/:id', verifyJWT, verifyAdmin, async(req, res)=>{
+      const id = req.params.id;
+      const filter = {_id: new ObjectId(id)};
+      const result = await shopsCollection.deleteOne(filter);
+      res.send(result);
+    })
+
     //temporary to update price field on appointment options
     // app.get('/addPrice', async(req, res) =>{
     //   const filter = {}
@@ -232,7 +260,7 @@ async function run(){
     //   res.send(result);
     // })
 
-    app.get('/doctors', verifyJWT, verifyAdmin, async(req, res) =>{
+    app.get('/doctors', async(req, res) =>{
       const query = {};
       const doctors = await doctorsCollection.find(query).toArray();
       res.send(doctors);
