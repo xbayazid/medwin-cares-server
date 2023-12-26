@@ -91,8 +91,8 @@ async function run(){
       options.forEach(option =>{
         const optionBooked = alreadyBooked.filter(book =>  book.treatment === option.name);
         const bookedSlots = optionBooked.map(book => book.slot);
-        const remainingSlots = option.slots.filter(slot => !bookedSlots.includes(slot));
-        option.slots = remainingSlots;
+        // const remainingSlots = option.slots.filter(slot => !bookedSlots.includes(slot));
+        // option.slots = remainingSlots;
       })
       res.send(options);
     });
@@ -213,6 +213,12 @@ async function run(){
       const result = await usersCollection.insertOne(user);
       res.send(result);
     });
+
+    app.post('/appointmentOptions', async(req, res)=>{
+      const appointmentOption = req.body;
+      const result = await appointmentOptionCollection.insertOne(appointmentOption);
+      res.send(result);
+    })
 
     app.post('/shop', async(req, res)=>{
       const shop = req.body;
