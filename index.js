@@ -70,6 +70,7 @@ async function run() {
     const shopsCollection = client.db('medwinCares').collection('shop');
     const paymentsCollection = client.db('medwinCares').collection('payments');
     const cartsCollection = client.db('medwinCares').collection('carts');
+    const ordersCollection = client.db('medwinCares').collection('orders');
 
     const verifyAdmin = async (req, res, next) => {
       const decodedEmail = req.decoded.email;
@@ -109,6 +110,13 @@ async function run() {
       const result = await shopsCollection.find(query).toArray();
       res.send(result)
     });
+
+    app.get('/shop/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)};
+      const result = await shopsCollection.findOne(query);
+      res.send(result);
+    })
 
     app.get("/carts", async (req, res) => {
       const email = req.query.email;
@@ -273,6 +281,38 @@ async function run() {
     app.post('/shop', async (req, res) => {
       const shop = req.body;
       const result = await shopsCollection.insertOne(shop);
+      res.send(result);
+    })
+
+    app.get('/orders', async (req, res) => {
+      const query = {};
+      const result = await ordersCollection.find(query).toArray();
+      res.send(result);
+    })
+
+    app.get('/myorders', async (req, res) => {
+      const email = req.query.email;
+      const query = {email: email};
+      const result = await ordersCollection.find(query).toArray()
+      res.send(result);
+    })
+
+    app.put("/orders/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = {_id: new ObjectId(id)};
+      // const option = { upsert: true };
+      const updatedDoc = {
+        $set: {
+          status: true,
+        }
+      }
+      const result = await ordersCollection.updateOne(filter, updatedDoc)
+      res.send(result);
+    })
+
+    app.post('/orders', async (req, res) => {
+      const order = req.body;
+      const result = await ordersCollection.insertOne(order);
       res.send(result);
     })
 
